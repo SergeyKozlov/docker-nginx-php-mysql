@@ -45,15 +45,15 @@ RUN echo "###################################"
 #####
 
 # Authorize SSH Host
-RUN mkdir -p /root/.ssh && \
-    chmod 0700 /root/.ssh && \
-    ssh-keyscan gitlab.com > /root/.ssh/known_hosts
+RUN mkdir -p ~/.ssh \
+    && touch ~/.ssh/known_hosts \
+    && ssh-keyscan gitlab.com > ~/.ssh/known_hosts
 
 # Add the keys and set permissions
-RUN echo "$ssh_prv_key" > /root/.ssh/id_rsa && \
-    echo "$ssh_pub_key" > /root/.ssh/id_rsa.pub && \
-    chmod 600 /root/.ssh/id_rsa && \
-    chmod 600 /root/.ssh/id_rsa.pub
+RUN echo "$ssh_prv_key" > ~/.ssh/id_rsa \
+    && echo "$ssh_pub_key" > ~/.ssh/id_rsa.pub \
+    && chmod 600 ~/.ssh/id_rsa \
+    && chmod 600 ~/.ssh/id_rsa.pub
 
 #####
 
@@ -62,7 +62,8 @@ RUN echo "$ssh_prv_key" > /root/.ssh/id_rsa && \
 # Clone the repository, notice the "--mount=type=ssh" option, which allow this instruction to use SSH forwarding
 #RUN --mount=type=ssh git clone --depth=1 'git@gitlab.com:SergeyKozlov/nad.git'
 # Clone the conf files into the docker container
-RUN git clone git@gitlab.com:SergeyKozlov/nad.git
+RUN cd /var/www/html \        
+   && git clone git@gitlab.com:SergeyKozlov/nad.git
 
 #########################################################################
 
@@ -91,7 +92,7 @@ COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
 
 
 # Remove SSH keys
-RUN rm -rf /root/.ssh/
+###RUN rm -rf ~/.ssh/
 
 # Add the rest of the files
 ADD . .

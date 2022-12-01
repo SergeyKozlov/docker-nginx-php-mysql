@@ -14,10 +14,10 @@
     "php-http/message": "dev-master",
     "aws/aws-sdk-php": "dev-master",
     "predis/predis": "dev-main",
-    "php-ffmpeg/php-ffmpeg": "1.0.1",
+    "php-ffmpeg/php-ffmpeg": "~0.6",
     "parse/php-sdk": "dev-master",
     "ext-SimpleXML": "*",
-    "gumlet/php-image-resize": "1.9.*",
+    "gumlet/php-image-resize": "2.0.*",
     "vide.me/video-thumbnail-sprite": "dev-master",
     "phpunit/phpunit": "9.5.26",
     "geoip2/geoip2": "~2.0"

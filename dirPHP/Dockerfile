@@ -2,54 +2,30 @@ FROM nanoninja/php-fpm:8.1
 
 MAINTAINER Sergey Kozlov "hello@sergeykozlov.ru"
 
+
 RUN apt-get update && apt-get install -y \
         libfreetype6-dev \
         libjpeg62-turbo-dev \
         libpng-dev \
-        imagemagick php-xml php-curl php-gd zip unzip php-zip php-xml php-curl php-gd \
-    && docker-php-ext-configure gd imagick zip \
-    && docker-php-ext-install -j$(nproc) gd imagick zip
+        imagemagick \
+    && docker-php-ext-configure gd --enable-gd --with-freetype --with-jpeg \
+    && docker-php-ext-install -j$(nproc) gd
 
-RUN pecl install redis curl xml mbstring imagick gd imagick \
-    && docker-php-ext-enable redis curl xml mbstring imagick gd imagick
 
-RUN apt-get update \
-	&& apt-get install -y \
-		libfreetype6-dev \
-		libpng-dev \
-		libjpeg-dev \
-	&& docker-php-ext-configure gd \
-		--with-freetype-dir=/usr/include/ \
-		--with-jpeg-dir=/usr/include/ \
-		--with-png-dir=/usr/include/ \
-	&& docker-php-ext-install -j$(nproc) \
-		gd \
-	&& apt-get purge -y \
-		libfreetype6-dev \
-		libpng-dev \
-		libjpeg-dev
+RUN apk add --update --upgrade --no-cache --virtual \
+        imagemagick \
+        imagemagick-dev
 
-RUN apt-get update \
-	&& apt-get install -y \
-		libmagickwand-dev --no-install-recommends \
-		ghostscript --no-install-recommends \
-	&& pecl install \
-		imagick \
-	&& docker-php-ext-enable \
-		imagick \
-	&& apt-get purge -y \
-		libmagickwand-dev
+# this causes warning, but in my case is used to install some other extensions which I have removed from this example.
+RUN echo http://dl-2.alpinelinux.org/alpine/edge/community/ >> /etc/apk/repositories
 
-RUN docker-php-ext-install gd
+RUN printf "\n" | pecl install \
+		imagick && \
+		docker-php-ext-enable --ini-name 20-imagick.ini imagick
 
-RUN pecl install gd \
-    && docker-php-ext-enable gd
-
-#install some base extensions
-RUN apt-get install -y \
-        libzip-dev \
-        zip \
-  && docker-php-ext-install zip
+ADD https://github.com/mlocati/docker-php-extension-installer/releases/download/1.4.25/install-php-extensions /usr/local/bin/
+RUN chmod +x /usr/local/bin/install-php-extensions && sync && \ 
+		install-php-extensions gd xdebug
 
 ADD . .
 

@@ -9,6 +9,8 @@ web/app/vendor/
 web/app/doc/
 web/app/report/
 data/
+zzz_data/
+web/
 
 # PHPStorm
 .idea/**/workspace.xml

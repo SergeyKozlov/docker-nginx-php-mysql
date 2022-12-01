@@ -1,22 +1,25 @@
 {
-    "require": {
-        "symfony/yaml": "^5.1"
-    },
-    "require-dev": {
-        "phpmd/phpmd": "@stable",
-        "phpunit/phpunit": "^9.0",
-        "squizlabs/php_codesniffer": "3.5.*"
-    },
-    "autoload": {
-        "psr-4": {
-            "App\\Acme\\": "src/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "AppTest\\Acme\\": "test/"
-        }
-    },
-    "minimum-stability": "stable",
-    "prefer-stable": true
+  "require": {
+    "phpmailer/phpmailer": "dev-master",
+    "league/oauth1-client": "dev-master",
+    "league/oauth2-client": "2.6.1",
+    "league/oauth2-google": "dev-main",
+    "league/oauth2-facebook": "dev-main",
+    "stevenmaguire/oauth2-microsoft": "dev-master",
+    "google/apiclient": "dev-main",
+    "igorbelikov/google-api-php-client-multi": "dev-master",
+    "abraham/twitteroauth": "dev-main",
+    "php-http/guzzle6-adapter": "dev-master",
+    "guzzlehttp/psr7": "1.x-dev",
+    "php-http/message": "dev-master",
+    "aws/aws-sdk-php": "dev-master",
+    "predis/predis": "dev-main",
+    "php-ffmpeg/php-ffmpeg": "1.0.1",
+    "parse/php-sdk": "dev-master",
+    "ext-SimpleXML": "*",
+    "gumlet/php-image-resize": "1.9.*",
+    "vide.me/video-thumbnail-sprite": "dev-master",
+    "phpunit/phpunit": "9.5.26",
+    "geoip2/geoip2": "~2.0"
+  }
 }

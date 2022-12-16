@@ -24,8 +24,9 @@ help:
 	@echo "  test                Test application"
 
 init:
-	@$(shell cp -n $(shell pwd)/web/app/composer.json.dist $(shell pwd)/web/app/composer.json 2> /dev/null)
-
+	# @$(shell cp -n $(shell pwd)/web/app/composer.json.dist $(shell pwd)/web/app/composer.json 2> /dev/null)
+	@$(shell cp -n $(shell pwd)/web/composer.json.dist $(shell pwd)/web/composer.json 2> /dev/null)
+	
 apidoc:
 	@docker run --rm -v $(shell pwd):/data phpdoc/phpdoc -i=vendor/ -d /data/web/app/src -t /data/web/app/doc
 	@make resetOwner
@@ -33,8 +34,10 @@ apidoc:
 clean:
 	@rm -Rf data/db/mysql/*
 	@rm -Rf $(MYSQL_DUMPS_DIR)/*
-	@rm -Rf web/app/vendor
-	@rm -Rf web/app/composer.lock
+	# @rm -Rf web/app/vendor
+	@rm -Rf web/vendor
+	# @rm -Rf web/app/composer.lock
+	@rm -Rf web/composer.lock
 	@rm -Rf web/app/doc
 	@rm -Rf web/app/report
 	@rm -Rf etc/ssl/*
@@ -44,8 +47,9 @@ code-sniff:
 	@docker-compose exec -T php ./app/vendor/bin/phpcs -v --standard=PSR2 app/src
 
 composer-up:
-	@docker run --rm -v $(shell pwd)/web/app:/app composer update
-
+	# @docker run --rm -v $(shell pwd)/web/app:/app composer update
+	@docker run --rm -v $(shell pwd)/web composer update
+	
 docker-start: init
 	docker-compose up -d
 
@@ -79,4 +83,18 @@ test: code-sniff
 resetOwner:
 	@$(shell chown -Rf $(SUDO_USER):$(shell id -g -n $(SUDO_USER)) $(MYSQL_DUMPS_DIR) "$(shell pwd)/etc/ssl" "$(shell pwd)/web/app" 2> /dev/null)
 
+# clone all images (repositories)
+clone-nad:
+	git clone git@gitlab.com:SergeyKozlov/nad.git
+	mv temp/.git web/.git
+	rm -rf temp
+	cd web git pull
+	
+
 .PHONY: clean test code-sniff init
+
+
+
+
+
+

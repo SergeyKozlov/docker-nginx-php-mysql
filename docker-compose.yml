@@ -30,5 +30,5 @@ services:
     composer:
         image: "composer"
         volumes:
-            - "./web"
+            - "./web:/app"
         command: install --ignore-platform-reqs

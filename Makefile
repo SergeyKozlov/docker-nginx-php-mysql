@@ -41,6 +41,8 @@ clean:
 	@rm -Rf web/app/doc
 	@rm -Rf web/app/report
 	@rm -Rf etc/ssl/*
+	
+	@rm -Rf web
 
 code-sniff:
 	@echo "Checking the standard code..."
@@ -48,9 +50,9 @@ code-sniff:
 
 composer-up:
 	# @docker run --rm -v $(shell pwd)/web/app:/app composer update
-	@docker run --rm -v $(shell pwd)/web composer update
+	@docker run --rm -v $(shell pwd)/web:/app composer update
 	
-docker-start: init
+docker-start: init clone-nad
 	docker-compose up -d
 
 docker-stop:
@@ -85,10 +87,7 @@ resetOwner:
 
 # clone all images (repositories)
 clone-nad:
-	git clone git@gitlab.com:SergeyKozlov/nad.git
-	mv temp/.git web/.git
-	rm -rf temp
-	cd web git pull
+	git clone git@gitlab.com:SergeyKozlov/nad.git web
 	
 
 .PHONY: clean test code-sniff init

@@ -19,6 +19,10 @@ services:
         restart: always
         depends_on:
             - php
+        deploy:
+            placement:
+                constraints:
+                  - "node.labels.TAG==dev"
     php:
         image: nanoninja/php-fpm:8.1
         restart: always
@@ -29,6 +33,10 @@ services:
         #build:
         #   context: ./dirPHP
         #   dockerfile: Dockerfile
+        deploy:
+            placement:
+                constraints:
+                  - "node.labels.TAG==dev"
     composer:
         image: "composer"
         volumes:
@@ -37,7 +45,7 @@ services:
 #volumes:
 #  php:
     # swarm
-    deploy:
-        placement:
-        constraints:
-          - "node.labels.TAG==dev"
+        deploy:
+            placement:
+                constraints:
+                  - "node.labels.TAG==dev"

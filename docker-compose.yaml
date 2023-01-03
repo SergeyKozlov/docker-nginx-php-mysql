@@ -1,0 +1,37 @@
+version: '3.9'
+services:
+    php:
+        image: sergeykozlov/test_docker:latest
+        container_name: phpfpm
+        restart: always
+        #volumes:
+        #   - php:/pas
+        #expose:
+        #    - 9000
+        volumes:
+          - type: volume
+        source: mydata
+        target: /pas
+        volume:
+          nocopy: true
+    nginx:
+        image: nginx:alpine
+        container_name: travellist-nginx
+        restart: unless-stopped
+        ports:
+           - "8000:80"
+        volumes:
+ #         - php:/var/www/html
+          - "./etc/nginx/default.conf:/etc/nginx/conf.d/default.conf"
+          - "./etc/nginx/vide.me-location.conf:/etc/nginx/vide.me-location.conf"
+          - "./etc/nginx/fastcgi-php.conf:/etc/nginx/snippets/fastcgi-php.conf"
+        volumes_from:
+          - php:rw
+        #networks:
+        #  - travellist
+#networks:
+#   travellist:
+#   driver: bridge
+volumes:
+   mydata:
+#  php:

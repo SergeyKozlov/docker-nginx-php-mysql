@@ -9,11 +9,111 @@
   <component name="PHPCodeSnifferOptionsConfiguration">
     <option name="transferred" value="true" />
   </component>
+  <component name="PhpIncludePathManager">
+    <include_path>
+      <path value="$PROJECT_DIR$/web/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/web/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/web/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/web/vendor/sebastian/code-unit" />
+      <path value="$PROJECT_DIR$/web/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/web/vendor/geoip2/geoip2" />
+      <path value="$PROJECT_DIR$/web/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/web/vendor/maxmind/web-service-common" />
+      <path value="$PROJECT_DIR$/web/vendor/parse/php-sdk" />
+      <path value="$PROJECT_DIR$/web/vendor/gumlet/php-image-resize" />
+      <path value="$PROJECT_DIR$/web/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/web/vendor/paragonie/constant_time_encoding" />
+      <path value="$PROJECT_DIR$/web/vendor/vide.me/video-thumbnail-sprite" />
+      <path value="$PROJECT_DIR$/web/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/web/vendor/symfony/cache" />
+      <path value="$PROJECT_DIR$/web/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/web/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/web/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/web/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/web/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/web/vendor/league/oauth1-client" />
+      <path value="$PROJECT_DIR$/web/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/web/vendor/aws/aws-crt-php" />
+      <path value="$PROJECT_DIR$/web/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/web/vendor/league/oauth2-client" />
+      <path value="$PROJECT_DIR$/web/vendor/symfony/polyfill-php72" />
+      <path value="$PROJECT_DIR$/web/vendor/aws/aws-sdk-php" />
+      <path value="$PROJECT_DIR$/web/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/web/vendor/league/flysystem" />
+      <path value="$PROJECT_DIR$/web/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/web/vendor/league/oauth2-google" />
+      <path value="$PROJECT_DIR$/web/vendor/symfony/filesystem" />
+      <path value="$PROJECT_DIR$/web/vendor/league/mime-type-detection" />
+      <path value="$PROJECT_DIR$/web/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/web/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/web/vendor/league/oauth2-facebook" />
+      <path value="$PROJECT_DIR$/web/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/web/vendor/symfony/cache-contracts" />
+      <path value="$PROJECT_DIR$/web/vendor/symfony/var-exporter" />
+      <path value="$PROJECT_DIR$/web/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/web/vendor/phpmailer/phpmailer" />
+      <path value="$PROJECT_DIR$/web/vendor/maxmind-db/reader" />
+      <path value="$PROJECT_DIR$/web/vendor/google/apiclient-services" />
+      <path value="$PROJECT_DIR$/web/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/web/vendor/google/auth" />
+      <path value="$PROJECT_DIR$/web/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/web/vendor/google/apiclient" />
+      <path value="$PROJECT_DIR$/web/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/web/vendor/igorbelikov/google-api-php-client-multi" />
+      <path value="$PROJECT_DIR$/web/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/web/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/web/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/web/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/web/vendor/phpunit/php-invoker" />
+      <path value="$PROJECT_DIR$/web/vendor/php-ffmpeg/php-ffmpeg" />
+      <path value="$PROJECT_DIR$/web/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/web/vendor/abraham/twitteroauth" />
+      <path value="$PROJECT_DIR$/web/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/web/vendor/intervention/image" />
+      <path value="$PROJECT_DIR$/web/vendor/neutron/temporary-filesystem" />
+      <path value="$PROJECT_DIR$/web/vendor/firebase/php-jwt" />
+      <path value="$PROJECT_DIR$/web/vendor/clue/stream-filter" />
+      <path value="$PROJECT_DIR$/web/vendor/stevenmaguire/oauth2-microsoft" />
+      <path value="$PROJECT_DIR$/web/vendor/alchemy/binary-driver" />
+      <path value="$PROJECT_DIR$/web/vendor/evenement/evenement" />
+      <path value="$PROJECT_DIR$/web/vendor/emgag/flysystem-tempdir" />
+      <path value="$PROJECT_DIR$/web/vendor/php-http/guzzle6-adapter" />
+      <path value="$PROJECT_DIR$/web/vendor/php-http/httplug" />
+      <path value="$PROJECT_DIR$/web/vendor/php-http/promise" />
+      <path value="$PROJECT_DIR$/web/vendor/php-http/message" />
+      <path value="$PROJECT_DIR$/web/vendor/php-http/message-factory" />
+      <path value="$PROJECT_DIR$/web/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/web/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/web/vendor/phpseclib/phpseclib" />
+      <path value="$PROJECT_DIR$/web/vendor/captioning/captioning" />
+      <path value="$PROJECT_DIR$/web/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/web/vendor/predis/predis" />
+      <path value="$PROJECT_DIR$/web/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/web/vendor/mtdowling/jmespath.php" />
+      <path value="$PROJECT_DIR$/web/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/web/vendor/sebastian/complexity" />
+      <path value="$PROJECT_DIR$/web/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/web/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/web/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/web/vendor/sebastian/cli-parser" />
+      <path value="$PROJECT_DIR$/web/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/web/vendor/sebastian/lines-of-code" />
+      <path value="$PROJECT_DIR$/web/vendor/sebastian/type" />
+      <path value="$PROJECT_DIR$/web/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/web/vendor/composer" />
+      <path value="$PROJECT_DIR$/web/vendor/sebastian/comparator" />
+    </include_path>
+  </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.4">
     <option name="suggestChangeDefaultLanguageLevel" value="false" />
   </component>
   <component name="PhpStanOptionsConfiguration">
     <option name="transferred" value="true" />
+  </component>
+  <component name="PhpUnit">
+    <phpunit_settings>
+      <PhpUnitSettings custom_loader_path="$PROJECT_DIR$/web/vendor/autoload.php" />
+    </phpunit_settings>
   </component>
   <component name="PsalmOptionsConfiguration">
     <option name="transferred" value="true" />
